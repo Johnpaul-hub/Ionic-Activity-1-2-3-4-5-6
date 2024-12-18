@@ -1,32 +1,56 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import Footer from '../views/Footer.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/index'
+  },
+  {
+    path: '/index',
+    component: () => import('@/views/index/index.vue')
+    
   },
   {
     path: '/tabs/',
-    component: TabsPage,
+    component: Footer,
     children: [
+    
       {
-        path: '',
-        redirect: '/tabs/tab1'
+        path: '/activity1',
+        component: () => import('@/views/Activity1/index.vue')
+        
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: '/activity2',
+        component: () => import('@/views/Activity2/index.vue')
+        
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: '/activity3',
+        component: () => import('@/views/Activity3/index.vue')
+        
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
-      }
+        path: '/activity4',
+        component: () => import('@/views/Activity4/index.vue')
+        
+      },
+         {
+        path: '/activity5',
+        component: () => import('@/views/Activity5/index.vue')
+        
+      },
+      {
+        path: '/activity6',
+        component: () => import('@/views/Activity6/index.vue')
+        
+      },
+
+
+
+
     ]
   }
 ]
